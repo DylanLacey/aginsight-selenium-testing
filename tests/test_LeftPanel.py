@@ -8,49 +8,49 @@ class TestLeftPanel(BaseTest):
     def setup_class(cls):
         BaseTest.setup_class()
 
-    # def test_all_commodity_panels_open_and_close_using_cross(self):
-    #     commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
-    #
-    #     for commodity in commodities:
-    #         # Click open the commodity
-    #         self.leftpanel.click_level_one_menu_item(commodity)
-    #
-    #         # Verify the panel has opened
-    #         assert self.leftpanel.commodity_panel_is_open(commodity), commodity + ' commodity panel did not open'
-    #
-    #         # Close the panel
-    #         self.leftpanel.click_level_two_cross_close()
-    #
-    #         # Verify that it closed
-    #         assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
-    #
-    # def test_all_commodity_panels_open_and_close_using_commodity_button(self):
-    #     commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
-    #
-    #     for commodity in commodities:
-    #         # Open the commodity panel
-    #         self.leftpanel.click_level_one_menu_item(commodity)
-    #
-    #         # Verify the panel has opened
-    #         assert self.leftpanel.commodity_panel_is_open(commodity), commodity + ' commodity panel did not open'
-    #
-    #         # Now click the commodity panel again to close it
-    #         self.leftpanel.click_level_one_menu_item(commodity)
-    #
-    #         # Verify that it closed
-    #         assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
-    #
-    # def test_dairy_layers_panel(self):
-    #     layerNames = ['Dairy Regions', 'Dairy Farms', 'Dairy Potential', 'Dairy Processors', 'Dairy Production by Year', 'Get more data']
-    #
-    #     # Open the Dairy commodity
-    #     self.leftpanel.click_level_one_menu_item('Dairy')
-    #
-    #     # Open the only Dairy sector
-    #     self.leftpanel.click_level_two_menu_item('Dairy')
-    #
-    #     # Verify all of the layer names are in the layer list
-    #     assert self.leftpanel.verify_layers_exist_within_sector_list(layerNames), 'Not all layers are present in the Dairy sector layer list'
+    def test_all_commodity_panels_open_and_close_using_cross(self):
+        commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
+    
+        for commodity in commodities:
+            # Click open the commodity
+            self.leftpanel.click_level_one_menu_item(commodity)
+
+            # Verify the panel has opened
+            assert self.leftpanel.commodity_panel_is_open(commodity), commodity + ' commodity panel did not open'
+
+            # Close the panel
+            self.leftpanel.click_level_two_cross_close()
+
+            # Verify that it closed
+            assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
+
+    def test_all_commodity_panels_open_and_close_using_commodity_button(self):
+        commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
+
+        for commodity in commodities:
+            # Open the commodity panel
+            self.leftpanel.click_level_one_menu_item(commodity)
+
+            # Verify the panel has opened
+            assert self.leftpanel.commodity_panel_is_open(commodity), commodity + ' commodity panel did not open'
+
+            # Now click the commodity panel again to close it
+            self.leftpanel.click_level_one_menu_item(commodity)
+
+            # Verify that it closed
+            assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
+
+    def test_dairy_layers_panel(self):
+        layerNames = ['Dairy Regions', 'Dairy Farms', 'Dairy Potential', 'Dairy Processors', 'Dairy Production by Year', 'Get more data']
+
+        # Open the Dairy commodity
+        self.leftpanel.click_level_one_menu_item('Dairy')
+
+        # Open the only Dairy sector
+        self.leftpanel.click_level_two_menu_item('Dairy')
+
+        # Verify all of the layer names are in the layer list
+        assert self.leftpanel.verify_layers_exist_within_sector_list(layerNames), 'Not all layers are present in the Dairy sector layer list'
 
     def test_field_crops_layers_panel(self):
         sectors = {
