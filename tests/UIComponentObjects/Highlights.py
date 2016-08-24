@@ -94,7 +94,6 @@ class Highlights(object):
 
         # Now get the text element of the title
         text = title.find_element_by_tag_name('tspan')
-        print text.get_attribute('innerHTML')
         return heading in text.get_attribute('innerHTML')
 
     def verify_below_graph_info(self, heading):
