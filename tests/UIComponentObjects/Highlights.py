@@ -162,5 +162,7 @@ class Highlights(object):
 
     def click_news_link(self):
         '''Clicks on the first news link (Read More) found.'''
-        element = self.driver.find_element(*HighlightsLocators.NEWS_LINK)
+        element = WebDriverWait(self.driver, 3).until(
+            EC.presence_of_element_located((*HighlightsLocators.NEWS_LINK))
+        )
         element.click()

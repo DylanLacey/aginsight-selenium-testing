@@ -68,20 +68,14 @@ class BaseTest(unittest.TestCase):
         # if they require it.
         self.driver.get('http://www.aginsight.sa.gov.au')
 
+        time.sleep(2)
+
         self.splash = Page.SplashPage(self.driver)
         self.tour = Tour.Tour(self.driver)
         self.footer = Footer.Footer(self.driver)
         self.header = Header.Header(self.driver)
         self.highlights = Highlights.Highlights(self.driver)
         self.leftpanel = LeftPanel.LeftPanel(self.driver)
-
-        # # Dismiss the splash page if it is still there
-        # try:
-        #     self.splash.click_Explore_Map_button()
-        #     time.sleep(2)
-        # except:
-        #     # Splash page is already closed
-        #     do_nothing = True
 
     # tearDown runs after each test case
     def tearDown(self):
