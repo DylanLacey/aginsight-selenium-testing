@@ -71,7 +71,7 @@ class TestLeftPanel(BaseTest):
 
         self.leftpanel.dismiss_splash_page()
 
-        assert self.leftpanel.verify_no_commodities_are_opened()
+        assert self.leftpanel.verify_no_commodities_are_opened() == False
 
         # # Open the Field Crops commodity
         # self.leftpanel.click_level_one_menu_item('Field Crops')
