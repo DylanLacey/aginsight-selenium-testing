@@ -54,7 +54,7 @@ class SplashPage(BasePage):
         # Need to wait until the new element has displayed.
         # Timeout after 10 seconds
         element = WebDriverWait(self.driver, 5).until(
-            EC.presence_of_element_located((By.ID, 'help'))
+            EC.visibility_of_element_located((By.ID, 'help'))
         )
         return element.is_displayed()
 
