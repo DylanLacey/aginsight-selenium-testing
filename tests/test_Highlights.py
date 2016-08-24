@@ -43,7 +43,6 @@ class TestHighlights(BaseTest):
 
         # Click on the highlights button
         self.highlights.click_highlights_button()
-        self.highlights.highlights_is_open()
 
         assert self.highlights.verify_left_section('OPPORTUNITIES'), 'OPPORTUNITIES is not displaying in the left section'
         assert self.highlights.verify_right_section('NEWS'), 'NEWS is not displaying in the right section'
@@ -53,7 +52,6 @@ class TestHighlights(BaseTest):
 
         # Click on the highlights button
         self.highlights.click_highlights_button()
-        self.highlights.highlights_is_open()
 
         assert len(self.highlights.get_news_articles()) > 0, 'No news articles are showing'
 
