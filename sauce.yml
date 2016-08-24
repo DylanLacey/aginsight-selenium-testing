@@ -1,2 +1,5 @@
 ---
   language: "python"
+  define:
+    invocationCount: 2
+    var2: "one two"
