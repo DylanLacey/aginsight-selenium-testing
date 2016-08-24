@@ -5,11 +5,21 @@ from selenium.webdriver.common.by import By
 from tests.LocatorObjects import Locators
 
 FooterLocators = Locators.FooterLocators()
+SplashPageLocators = Locators.SplashPageLocators()
 
 class Footer(object):
     '''The Footer class contains all methods for interacting with the footer.'''
     def __init__(self, driver):
         self.driver = driver
+
+    def dismiss_splash_page(self):
+        '''Clicks the Explore Map & Data button'''
+        element = self.driver.find_element(*SplashPageLocators.EXPLORE_BUTTON)
+        element.click()
+
+        WebDriverWait(self.driver, 5).until(
+            EC.invisibility_of_element_located((By.CSS_SELECTOR, '.dialog-shadow'))
+        )
 
     def get_current_coord_sys(self):
         '''Method to return the current coordinate system showing'''
