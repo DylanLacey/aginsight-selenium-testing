@@ -10,7 +10,8 @@ class TestLeftPanel(BaseTest):
 
     def test_all_commodity_panels_open_and_close_using_cross(self):
         commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
-    
+        self.leftpanel.dismiss_splash_page()
+
         for commodity in commodities:
             # Click open the commodity
             self.leftpanel.click_level_one_menu_item(commodity)
@@ -26,6 +27,7 @@ class TestLeftPanel(BaseTest):
 
     def test_all_commodity_panels_open_and_close_using_commodity_button(self):
         commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
+        self.leftpanel.dismiss_splash_page()
 
         for commodity in commodities:
             # Open the commodity panel
@@ -42,6 +44,7 @@ class TestLeftPanel(BaseTest):
 
     def test_dairy_layers_panel(self):
         layerNames = ['Dairy Regions', 'Dairy Farms', 'Dairy Potential', 'Dairy Processors', 'Dairy Production by Year', 'Get more data']
+        self.leftpanel.dismiss_splash_page()
 
         # Open the Dairy commodity
         self.leftpanel.click_level_one_menu_item('Dairy')
@@ -65,6 +68,8 @@ class TestLeftPanel(BaseTest):
             'Ryecorn': ['Land Potential for Dryland Perennial Rye Grass', 'Land Potential for Irrigated Rye Grass', 'Land Potential for Perennial Rye Grass (High-Value)', 'Rye Production by Year', 'Get more data'],
             'Wheat': ['Wheat Regions', 'Durum Production by Year', 'Grain Storage', 'Land Potential for Wheat', 'Wheat Production by Year', 'Get more data']
         }
+
+        self.leftpanel.dismiss_splash_page()
 
         # Open the Field Crops commodity
         self.leftpanel.click_level_one_menu_item('Field Crops')

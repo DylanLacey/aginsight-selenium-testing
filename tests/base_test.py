@@ -75,13 +75,13 @@ class BaseTest(unittest.TestCase):
         self.highlights = Highlights.Highlights(self.driver)
         self.leftpanel = LeftPanel.LeftPanel(self.driver)
 
-        # Dismiss the splash page if it is still there
-        try:
-            self.splash.click_Explore_Map_button()
-            time.sleep(2)
-        except:
-            # Splash page is already closed
-            do_nothing = True
+        # # Dismiss the splash page if it is still there
+        # try:
+        #     self.splash.click_Explore_Map_button()
+        #     time.sleep(2)
+        # except:
+        #     # Splash page is already closed
+        #     do_nothing = True
 
     # tearDown runs after each test case
     def tearDown(self):

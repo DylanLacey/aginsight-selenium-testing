@@ -5,11 +5,21 @@ from selenium.webdriver.common.by import By
 from tests.LocatorObjects import Locators
 
 LeftPanelLocators = Locators.LeftPanelLocators()
+SplashPageLocators = Locators.SplashPageLocators()
 
 class LeftPanel(object):
     '''The LeftPanel class contains all methods for interacting with the left UI panel.'''
     def __init__(self, driver):
         self.driver = driver
+
+    def dismiss_splash_page(self):
+        '''Clicks the Explore Map & Data button'''
+        element = self.driver.find_element(*SplashPageLocators.EXPLORE_BUTTON)
+        element.click()
+
+        WebDriverWait(self.driver, 5).until(
+            EC.invisibility_of_element_located((By.CSS_SELECTOR, '.dialog-shadow'))
+        )
 
     def verify_no_commodities_are_opened(self):
         '''Verifies that no commodity panels are currently opened.'''
