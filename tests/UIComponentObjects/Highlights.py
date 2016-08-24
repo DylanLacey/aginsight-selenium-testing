@@ -26,7 +26,7 @@ class Highlights(object):
         # Need to wait until the new element has displayed.
         # Timeout after 3 seconds
         element = WebDriverWait(self.driver, 3).until(
-            EC.presence_of_element_located((By.ID, 'highlight'))
+            EC.invisibility_of_element_located((By.ID, 'highlight'))
         )
 
         return element.is_displayed()
@@ -34,7 +34,7 @@ class Highlights(object):
     def verify_left_section(self, heading):
         '''Verfies that the input heading is showing in the left section of the highlights.'''
         element = WebDriverWait(self.driver, 3).until(
-            EC.presence_of_element_located((By.ID, 'highlight'))
+            EC.visibility_of_element_located((By.ID, 'highlight'))
         )
 
         leftSection = element.find_element(By.CSS_SELECTOR, '.section.section-left')
@@ -44,7 +44,7 @@ class Highlights(object):
     def verify_right_section(self, heading):
         '''Verfies that the input heading is showing in the right section of the highlights.'''
         element = WebDriverWait(self.driver, 3).until(
-            EC.presence_of_element_located((By.ID, 'highlight'))
+            EC.visibility_of_element_located((By.ID, 'highlight'))
         )
 
         rightSection = element.find_element(By.CSS_SELECTOR, '.section.section-right')
@@ -54,7 +54,7 @@ class Highlights(object):
     def get_news_articles(self):
         '''Verifies that the news article section is populated with articles.'''
         element = WebDriverWait(self.driver, 3).until(
-            EC.presence_of_element_located((By.ID, 'highlight'))
+            EC.visibility_of_element_located((By.ID, 'highlight'))
         )
 
         # Get the right section

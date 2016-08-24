@@ -76,7 +76,7 @@ class TestHighlights(BaseTest):
         self.highlights.click_dairy_tab_button()
 
         # Verify that the headings are displaying correctly (need to specify unicode string)
-        assert self.highlights.verify_graph_heading(u"Dairy \u2013 China's growing dairy demand"), 'Graph not displaying the correct Dairy heading'
+        assert self.highlights.verify_graph_heading(u"Dairy - China's growing dairy demand"), 'Graph not displaying the correct Dairy heading'
         assert self.highlights.verify_below_graph_info('Dairy'), 'The info below the graph is not displaying Dairy'
 
     def test_horticulture_tab(self):
@@ -102,7 +102,7 @@ class TestHighlights(BaseTest):
         self.highlights.click_livestock_tab_button()
 
         # Verify that the headings are displaying correctly
-        assert self.highlights.verify_graph_heading(u'Global Demand Growth for Animal Protein 1985\u20132035'), 'Graph not displaying the correct Livestock heading'
+        assert self.highlights.verify_graph_heading(u'Global Demand Growth for Animal Protein 1985-2035'), 'Graph not displaying the correct Livestock heading'
         assert self.highlights.verify_below_graph_info('Livestock'), 'The info below the graph is not displaying Livestock'
 
     def test_seafood_tab(self):
