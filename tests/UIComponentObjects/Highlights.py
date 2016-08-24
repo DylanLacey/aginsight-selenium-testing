@@ -162,6 +162,5 @@ class Highlights(object):
 
     def click_news_link(self):
         '''Clicks on the first news link (Read More) found.'''
-        time.sleep(2)
         element = self.driver.find_element(*HighlightsLocators.NEWS_LINK)
         element.click()

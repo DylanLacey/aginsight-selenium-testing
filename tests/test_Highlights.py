@@ -60,6 +60,7 @@ class TestHighlights(BaseTest):
 
         # Click on the highlights button
         self.highlights.click_highlights_button()
+        self.highlights.highlights_is_open()
 
         # Click on a news link (the first one selenium finds)
         self.highlights.click_news_link()
