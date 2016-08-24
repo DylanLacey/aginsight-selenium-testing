@@ -5,11 +5,21 @@ from selenium.webdriver.common.by import By
 from tests.LocatorObjects import Locators
 
 HeaderLocators = Locators.HeaderLocators()
+SplashPageLocators = Locators.SplashPageLocators()
 
 class Header(object):
     '''The Header class contains all methods for interacting with the header.'''
     def __init__(self, driver):
         self.driver = driver
+
+    def dismiss_splash_page(self):
+        '''Clicks the Explore Map & Data button'''
+        element = self.driver.find_element(*SplashPageLocators.EXPLORE_BUTTON)
+        element.click()
+
+        WebDriverWait(self.driver, 5).until(
+            EC.invisibility_of_element_located((By.CSS_SELECTOR, '.dialog-shadow'))
+        )
 
     def new_window_is_open(self, title):
         '''Method to verify that the disclaimer window has opened in the browser'''
