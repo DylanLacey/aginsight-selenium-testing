@@ -5,11 +5,21 @@ from selenium.webdriver.common.by import By
 from tests.LocatorObjects import Locators
 
 HighlightsLocators = Locators.HighlightsLocators()
+SplashPageLocators = Locators.SplashPageLocators()
 
 class Highlights(object):
     '''The Highlights class contains all methods for interacting with the highlights.'''
     def __init__(self, driver):
         self.driver = driver
+
+    def dismiss_splash_page(self):
+        '''Clicks the Explore Map & Data button'''
+        element = self.driver.find_element(*SplashPageLocators.EXPLORE_BUTTON)
+        element.click()
+
+        WebDriverWait(self.driver, 5).until(
+            EC.invisibility_of_element_located((By.CSS_SELECTOR, '.dialog-shadow'))
+        )
 
     def highlights_is_open(self):
         '''Checks if the highlights compoenent is open.'''
