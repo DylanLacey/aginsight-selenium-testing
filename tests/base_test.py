@@ -2,6 +2,7 @@ import os
 import unittest
 import sys
 import new
+import time
 from selenium import webdriver
 from sauceclient import SauceClient
 from PageObjects import Page
@@ -77,6 +78,7 @@ class BaseTest(unittest.TestCase):
         # Dismiss the splash page if it is still there
         try:
             self.splash.click_Explore_Map_button()
+            time.sleep(2)
         except:
             # Splash page is already closed
             do_nothing = True
