@@ -21,7 +21,7 @@ class TestHighlights(BaseTest):
         self.highlights.click_highlights_button()
 
         # Verify the highlights compoent has closed
-        assert self.highlights.highlights_is_open() == False, 'Highlights compoenent did not close'
+        assert self.highlights.highlights_is_closed(), 'Highlights compoenent did not close'
 
     def test_highlights_click_cross_to_close(self):
         self.highlights.dismiss_splash_page()
@@ -36,7 +36,7 @@ class TestHighlights(BaseTest):
         self.highlights.click_cross_close_button()
 
         # Verify the highlights compoent has closed
-        assert self.highlights.highlights_is_open() == False, 'Highlights compoenent did not close'
+        assert self.highlights.highlights_is_closed(), 'Highlights compoenent did not close'
 
     def test_sections_are_displaying_correctly(self):
         self.highlights.dismiss_splash_page()
@@ -76,7 +76,7 @@ class TestHighlights(BaseTest):
         self.highlights.click_dairy_tab_button()
 
         # Verify that the headings are displaying correctly (need to specify unicode string)
-        assert self.highlights.verify_graph_heading(u"Dairy - China's growing dairy demand"), 'Graph not displaying the correct Dairy heading'
+        assert self.highlights.verify_graph_heading(u"China's growing dairy demand"), 'Graph not displaying the correct Dairy heading'
         assert self.highlights.verify_below_graph_info('Dairy'), 'The info below the graph is not displaying Dairy'
 
     def test_horticulture_tab(self):
@@ -102,7 +102,7 @@ class TestHighlights(BaseTest):
         self.highlights.click_livestock_tab_button()
 
         # Verify that the headings are displaying correctly
-        assert self.highlights.verify_graph_heading(u'Global Demand Growth for Animal Protein 1985-2035'), 'Graph not displaying the correct Livestock heading'
+        assert self.highlights.verify_graph_heading(u'Global Demand Growth for Animal Protein'), 'Graph not displaying the correct Livestock heading'
         assert self.highlights.verify_below_graph_info('Livestock'), 'The info below the graph is not displaying Livestock'
 
     def test_seafood_tab(self):
@@ -128,7 +128,7 @@ class TestHighlights(BaseTest):
         self.highlights.click_wine_tab_button()
 
         # Verify that the headings are displaying correctly
-        assert self.highlights.verify_graph_heading(u'Wine - Global wine demand by region'), 'Graph not displaying the correct Wine heading'
+        assert self.highlights.verify_graph_heading(u'Global wine demand by region'), 'Graph not displaying the correct Wine heading'
         assert self.highlights.verify_below_graph_info('Wine'), 'The info below the graph is not displaying Wine'
 
 if __name__ == "__main__":

@@ -3,6 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from tests.LocatorObjects import Locators
+import time
 
 HighlightsLocators = Locators.HighlightsLocators()
 SplashPageLocators = Locators.SplashPageLocators()
@@ -26,10 +27,23 @@ class Highlights(object):
         # Need to wait until the new element has displayed.
         # Timeout after 3 seconds
         element = WebDriverWait(self.driver, 3).until(
-            EC.invisibility_of_element_located((By.ID, 'highlight'))
+            EC.visibility_of_element_located((By.ID, 'highlight'))
         )
 
         return element.is_displayed()
+
+    def highlights_is_closed(self):
+        '''Checks if the highlights compoenent is closed.'''
+        # Need to wait until the new element has displayed.
+        # Timeout after 3 seconds
+        element = WebDriverWait(self.driver, 3).until(
+            EC.invisibility_of_element_located((By.ID, 'highlight'))
+        )
+
+        if (element.is_displayed() == True):
+            return False
+        else:
+            return True
 
     def verify_left_section(self, heading):
         '''Verfies that the input heading is showing in the left section of the highlights.'''
@@ -71,6 +85,9 @@ class Highlights(object):
         element = WebDriverWait(self.driver, 3).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, '.tab-content.open'))
         )
+
+        # Ensure the graph is updated by sleeping for 2 seconds
+        time.sleep(2)
 
         # Now get the highcharts-title
         title = element.find_element_by_class_name('highcharts-title')
