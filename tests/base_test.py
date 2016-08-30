@@ -6,7 +6,7 @@ import time
 from selenium import webdriver
 from sauceclient import SauceClient
 from PageObjects import Page
-from UIComponentObjects import Tour, Footer, Header, Highlights, LeftPanel
+from UIComponentObjects import Tour, Footer, Header, Highlights, LeftPanel, RightPanel, CommodityDrawer
 
 '''All test modules inherit from the BaseTest class.'''
 
@@ -76,6 +76,8 @@ class BaseTest(unittest.TestCase):
         self.header = Header.Header(self.driver)
         self.highlights = Highlights.Highlights(self.driver)
         self.leftpanel = LeftPanel.LeftPanel(self.driver)
+        self.rightpanel = RightPanel.RightPanel(self.driver)
+        self.comdrawer = CommodityDrawer.CommodityDrawer(self.driver)
 
     # tearDown runs after each test case
     def tearDown(self):

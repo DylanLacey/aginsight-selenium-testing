@@ -43,3 +43,20 @@ class HighlightsLocators(object):
 class LeftPanelLocators(object):
     '''A class for left UI panel locators.'''
     LEVEL_TWO_CROSS = (By.CLASS_NAME, 'close')
+    HELP_BUTTON = (By.LINK_TEXT, '?')
+
+class RightPanelLocators(object):
+    '''A class for the right UI panel locators.'''
+    CROSS_BUTTON = (By.XPATH, "//div[contains(@class, 'tool open')]/a")
+    RESET_CROSS_BUTTON = (By.XPATH, "//div[@id='reset-dialog'][contains(@class, 'dialog open')]/a/span")
+    COLLAPSE_BUTTON = (By.XPATH, "//div[@id='layers']/div/div/div/ul/li/div/span[contains(@class, 'collapse')]")
+    ADD_BOOKMARK = (By.CSS_SELECTOR, "a[href*='#addbookmark']")
+    SAVE_BOOKMARK = (By.XPATH, "//div[@id='bookmarks-dialog']/div/form/div[2]/button")
+    RESET_BUTTON = (By.CSS_SELECTOR, "a[href*='reset']")
+
+class CommodityDrawerLocators(object):
+    '''A class for commodity drawer locators.'''
+    OVERVIEW_BUTTON = (By.XPATH, "//div[@id='overview']/ul/li/span")
+    VERTICAL_DRAG = (By.CLASS_NAME, 'ap-drag-vertical')
+    INDUSTRY_PROFILE = (By.XPATH, "//div[contains(@class, 'executive-summary')]/a")
+    MORE_INFORMATION = (By.XPATH, "//div[contains(@class, 'executive-summary')]/a[2]")
