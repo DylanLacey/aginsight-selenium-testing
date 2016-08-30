@@ -959,7 +959,7 @@ class TestAgInsight(BaseTest):
 
         # Open the basemaps panel
         self.rightpanel.click_panel_button('basemap')
-
+        time.sleep(1)
         basemaps = ['Imagery', 'Street Map', 'Light Grey', 'Dark Grey', 'Location SA Streetmap', 'Location SA Topographic']
         # Verify the basemaps are all present
         assert self.rightpanel.verify_basemaps_are_showing(basemaps), 'The Basemap gallery is not displaying properly'
