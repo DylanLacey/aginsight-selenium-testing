@@ -1,4 +1,5 @@
 from .base_test import *
+import time
 
 @on_platforms(browsers)
 class TestAgInsight(BaseTest):
