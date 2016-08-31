@@ -55,13 +55,12 @@ class BaseTest(unittest.TestCase):
         # if BaseTest.build_tag:
         #     self.desired_capabilities['build'] = BaseTest.build_tag
         #
-        # self.driver = webdriver.Remote(
-        #         command_executor="http://%s:%s@%s:%s/wd/hub" %
-        #                          (BaseTest.username,
-        #                           BaseTest.access_key,
-        #                           BaseTest.selenium_host,
-        #                           BaseTest.selenium_port),
-        #         desired_capabilities=self.desired_capabilities)
+        self.driver = webdriver.Remote(
+                command_executor="http://%s:%s@%s:%s/wd/hub" %
+                                 (BaseTest.username,
+                                  BaseTest.access_key,
+                                  BaseTest.selenium_host,
+                                  BaseTest.selenium_port))
 
         # Open the website in the BaseTest, this can now be used in multiple tests, without
         # having to reload the page. Otherwise, individual tests can still reload the page
