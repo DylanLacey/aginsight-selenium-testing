@@ -1,7 +1,7 @@
 from .base_test import *
 import time
 
-#@on_platforms(browsers)
+@on_platforms(browsers)
 class TestAgInsight(BaseTest):
     '''These tests will test all of AgInsight.'''
 
