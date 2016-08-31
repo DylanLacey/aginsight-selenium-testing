@@ -11,17 +11,17 @@ from UIComponentObjects import Tour, Footer, Header, Highlights, LeftPanel, Righ
 '''All test modules inherit from the BaseTest class.'''
 
 # Specify which OS/Browser combinations to test on
-browsers = [{
-    "platform": "Windows 7",
-    "browserName": "chrome",
-    "version": "51.0",
-    "screenResolution": "1920x1200",
-    "recordVideo": False,
-    "recordScreenshots": False,
-    "captureHTML": False,
-    "videoUploadOnPass": False,
-    "recordLogs": False
-}]
+# browsers = [{
+#     "platform": "Windows 7",
+#     "browserName": "chrome",
+#     "version": "51.0",
+#     "screenResolution": "1920x1200",
+#     "recordVideo": False,
+#     "recordScreenshots": False,
+#     "captureHTML": False,
+#     "videoUploadOnPass": False,
+#     "recordLogs": False
+# }]
 
 
 # This decorator is required to iterate over browsers
