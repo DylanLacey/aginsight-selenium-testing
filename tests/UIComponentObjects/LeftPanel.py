@@ -14,7 +14,10 @@ class LeftPanel(object):
 
     def dismiss_splash_page(self):
         '''Clicks the Explore Map & Data button'''
-        element = self.driver.find_element(*SplashPageLocators.EXPLORE_BUTTON)
+        #element = self.driver.find_element(*SplashPageLocators.EXPLORE_BUTTON)
+        element = WebDriverWait(self.driver, 5).until(
+            EC.presence_of_element_located(SplashPageLocators.EXPLORE_BUTTON)
+        )
         element.click()
 
         WebDriverWait(self.driver, 5).until(
