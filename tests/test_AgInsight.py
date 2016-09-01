@@ -320,28 +320,28 @@ class TestAgInsight(BaseTest):
     #         # Verify the overview button has changed text
     #         assert self.comdrawer.overview_button_is_correct(com), 'The overview button in the commodity drawer is not correct for: ' + com
     #
-    def test_commodity_drawer_opens_and_closes(self):
-        self.comdrawer.dismiss_splash_page()
-
-        commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
-
-        for com in commodities:
-            # Click on the commodity to change the commodity drawer
-            self.leftpanel.click_level_one_menu_item(com)
-            # We need to wait for the drawer to change commodity
-            time.sleep(1)
-            # Click on the overview button to open the drawer
-            self.comdrawer.click_overview_button()
-
-            # Verify the commodity drawer has opened
-            assert self.comdrawer.verify_drawer_is_open(), 'The commodity drawer for ' + com + ' did not open correctly'
-            # We need to wait for the tab to fully open
-            time.sleep(1)
-            # CLick on the overview button to close the drawer
-            self.comdrawer.click_overview_button()
-
-            # verify the drawer has closed
-            assert self.comdrawer.verify_drawer_is_closed(), 'The commodity drawer for ' + com + ' did not close correctly'
+    # def test_commodity_drawer_opens_and_closes(self):
+    #     self.comdrawer.dismiss_splash_page()
+    #
+    #     commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
+    #
+    #     for com in commodities:
+    #         # Click on the commodity to change the commodity drawer
+    #         self.leftpanel.click_level_one_menu_item(com)
+    #         # We need to wait for the drawer to change commodity
+    #         time.sleep(1)
+    #         # Click on the overview button to open the drawer
+    #         self.comdrawer.click_overview_button()
+    #
+    #         # Verify the commodity drawer has opened
+    #         assert self.comdrawer.verify_drawer_is_open(), 'The commodity drawer for ' + com + ' did not open correctly'
+    #         # We need to wait for the tab to fully open
+    #         time.sleep(1)
+    #         # CLick on the overview button to close the drawer
+    #         self.comdrawer.click_overview_button()
+    #
+    #         # verify the drawer has closed
+    #         assert self.comdrawer.verify_drawer_is_closed(), 'The commodity drawer for ' + com + ' did not close correctly'
     #
     # def test_commodity_drawer_closes_with_vertical_drag(self):
     #     self.comdrawer.dismiss_splash_page()
@@ -529,23 +529,23 @@ class TestAgInsight(BaseTest):
             # Verify that it closed
             assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
 
-    def test_all_commodity_panels_open_and_close_using_commodity_button(self):
-        self.leftpanel.dismiss_splash_page()
-
-        commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
-
-        for commodity in commodities:
-            # Open the commodity panel
-            self.leftpanel.click_level_one_menu_item(commodity)
-
-            # Verify the panel has opened
-            assert self.leftpanel.commodity_panel_is_open(commodity), commodity + ' commodity panel did not open'
-
-            # Now click the commodity panel again to close it
-            self.leftpanel.click_level_one_menu_item(commodity)
-
-            # Verify that it closed
-            assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
+    # def test_all_commodity_panels_open_and_close_using_commodity_button(self):
+    #     self.leftpanel.dismiss_splash_page()
+    #
+    #     commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
+    #
+    #     for commodity in commodities:
+    #         # Open the commodity panel
+    #         self.leftpanel.click_level_one_menu_item(commodity)
+    #
+    #         # Verify the panel has opened
+    #         assert self.leftpanel.commodity_panel_is_open(commodity), commodity + ' commodity panel did not open'
+    #
+    #         # Now click the commodity panel again to close it
+    #         self.leftpanel.click_level_one_menu_item(commodity)
+    #
+    #         # Verify that it closed
+    #         assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
 
     # def test_dairy_layers_panel(self):
     #     self.leftpanel.dismiss_splash_page()
@@ -737,43 +737,43 @@ class TestAgInsight(BaseTest):
     #     # Verify the tour has started using the SplashPage
     #     assert self.splash.tour_screen_is_open(), 'Tour did not open from help button'
     #
-    '''--- These tests will test the functionality of the right UI panel ---'''
-    def test_all_right_panel_menus_open_and_close(self):
-        self.comdrawer.dismiss_splash_page()
-
-        panels = ['layers', 'legend', 'identify', 'bookmarks', 'basemap']
-
-        for panel in panels:
-            # Click open the panel
-            self.rightpanel.click_panel_button(panel)
-
-            # Verify the panel has opened
-            assert self.rightpanel.verify_panel_is_open(panel), 'The panel: ' + panel + ' did not open correctly'
-
-            # Click again to close the panel
-            self.rightpanel.click_panel_button(panel)
-
-            # Verify the panel is now closed
-            assert self.rightpanel.verify_panel_is_closed(panel), 'The panel: ' + panel + ' did not close correctly'
-
-    def test_all_panels_close_with_cross(self):
-        self.comdrawer.dismiss_splash_page()
-    
-        panels = ['layers', 'legend', 'identify', 'bookmarks', 'basemap']
-
-        for panel in panels:
-            # Click open the panel
-            self.rightpanel.click_panel_button(panel)
-            self.rightpanel.verify_panel_is_open(panel)
-            # Need to explicitly wait here, otherwise we may click
-            # another element
-            time.sleep(0.5)
-            # Click the cross to close the panel
-            self.rightpanel.click_panel_cross_button()
-
-            # Verify the panel is now closed
-            assert self.rightpanel.verify_panel_is_closed(panel), 'The panel: ' + panel + ' did not close correctly using the cross button'
-
+    # '''--- These tests will test the functionality of the right UI panel ---'''
+    # def test_all_right_panel_menus_open_and_close(self):
+    #     self.comdrawer.dismiss_splash_page()
+    #
+    #     panels = ['layers', 'legend', 'identify', 'bookmarks', 'basemap']
+    #
+    #     for panel in panels:
+    #         # Click open the panel
+    #         self.rightpanel.click_panel_button(panel)
+    #
+    #         # Verify the panel has opened
+    #         assert self.rightpanel.verify_panel_is_open(panel), 'The panel: ' + panel + ' did not open correctly'
+    #
+    #         # Click again to close the panel
+    #         self.rightpanel.click_panel_button(panel)
+    #
+    #         # Verify the panel is now closed
+    #         assert self.rightpanel.verify_panel_is_closed(panel), 'The panel: ' + panel + ' did not close correctly'
+    #
+    # def test_all_panels_close_with_cross(self):
+    #     self.comdrawer.dismiss_splash_page()
+    #
+    #     panels = ['layers', 'legend', 'identify', 'bookmarks', 'basemap']
+    #
+    #     for panel in panels:
+    #         # Click open the panel
+    #         self.rightpanel.click_panel_button(panel)
+    #         self.rightpanel.verify_panel_is_open(panel)
+    #         # Need to explicitly wait here, otherwise we may click
+    #         # another element
+    #         time.sleep(0.5)
+    #         # Click the cross to close the panel
+    #         self.rightpanel.click_panel_cross_button()
+    #
+    #         # Verify the panel is now closed
+    #         assert self.rightpanel.verify_panel_is_closed(panel), 'The panel: ' + panel + ' did not close correctly using the cross button'
+    #
     # def test_reset_panel_menu_opens_and_closes(self):
     #     self.comdrawer.dismiss_splash_page()
     #
