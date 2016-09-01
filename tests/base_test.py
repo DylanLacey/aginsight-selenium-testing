@@ -68,7 +68,7 @@ class BaseTest(unittest.TestCase):
         # if they require it.
         self.driver.get('http://www.aginsight.sa.gov.au')
 
-        time.sleep(10)
+        time.sleep(2)
 
         self.splash = Page.SplashPage(self.driver)
         self.tour = Tour.Tour(self.driver)

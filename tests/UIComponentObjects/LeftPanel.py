@@ -159,6 +159,7 @@ class LeftPanel(object):
             if aElement.get_attribute('innerHTML').split('</span>')[-1] == sectorToFind:
                 # Click the sector open
                 span.click()
+                break
 
     def click_level_three_menu_item(self, layerType):
         # Get the menu element
@@ -184,6 +185,7 @@ class LeftPanel(object):
             if aElement.get_attribute('innerHTML').split('</span>')[-1] == layerType:
                 # Click the sector open
                 span.click()
+                break
 
     def click_level_three_layer_item(self, layerName):
         '''Clicks on a specific layer in the opened sector.'''
