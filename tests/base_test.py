@@ -66,6 +66,7 @@ class BaseTest(unittest.TestCase):
         # Open the website in the BaseTest, this can now be used in multiple tests, without
         # having to reload the page. Otherwise, individual tests can still reload the page
         # if they require it.
+        time.sleep(2)
         self.driver.get('http://www.aginsight.sa.gov.au')
 
         time.sleep(2)
