@@ -509,43 +509,43 @@ class TestAgInsight(BaseTest):
     #     # Verify the new window is open by using part of the title
     #     assert self.comdrawer.new_window_is_open_by_title('PIRSA'), 'Wine More Information link did not work correctly'
     #
-    # '''--- These tests will test the functionality of the left UI panel component ---'''
-    # # TODO: Can the commodities, sectors and layers be read from a config file? Potentially the LayerDefs file?
-    # def test_all_commodity_panels_open_and_close_using_cross(self):
-    #     self.leftpanel.dismiss_splash_page()
-    #
-    #     commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
-    #
-    #     for commodity in commodities:
-    #         # Click open the commodity
-    #         self.leftpanel.click_level_one_menu_item(commodity)
-    #
-    #         # Verify the panel has opened
-    #         assert self.leftpanel.commodity_panel_is_open(commodity), commodity + ' commodity panel did not open'
-    #
-    #         # Close the panel
-    #         self.leftpanel.click_level_two_cross_close()
-    #
-    #         # Verify that it closed
-    #         assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
-    #
-    # def test_all_commodity_panels_open_and_close_using_commodity_button(self):
-    #     self.leftpanel.dismiss_splash_page()
-    #
-    #     commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
-    #
-    #     for commodity in commodities:
-    #         # Open the commodity panel
-    #         self.leftpanel.click_level_one_menu_item(commodity)
-    #
-    #         # Verify the panel has opened
-    #         assert self.leftpanel.commodity_panel_is_open(commodity), commodity + ' commodity panel did not open'
-    #
-    #         # Now click the commodity panel again to close it
-    #         self.leftpanel.click_level_one_menu_item(commodity)
-    #
-    #         # Verify that it closed
-    #         assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
+    '''--- These tests will test the functionality of the left UI panel component ---'''
+    # TODO: Can the commodities, sectors and layers be read from a config file? Potentially the LayerDefs file?
+    def test_all_commodity_panels_open_and_close_using_cross(self):
+        self.leftpanel.dismiss_splash_page()
+
+        commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
+
+        for commodity in commodities:
+            # Click open the commodity
+            self.leftpanel.click_level_one_menu_item(commodity)
+
+            # Verify the panel has opened
+            assert self.leftpanel.commodity_panel_is_open(commodity), commodity + ' commodity panel did not open'
+
+            # Close the panel
+            self.leftpanel.click_level_two_cross_close()
+
+            # Verify that it closed
+            assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
+
+    def test_all_commodity_panels_open_and_close_using_commodity_button(self):
+        self.leftpanel.dismiss_splash_page()
+
+        commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
+
+        for commodity in commodities:
+            # Open the commodity panel
+            self.leftpanel.click_level_one_menu_item(commodity)
+
+            # Verify the panel has opened
+            assert self.leftpanel.commodity_panel_is_open(commodity), commodity + ' commodity panel did not open'
+
+            # Now click the commodity panel again to close it
+            self.leftpanel.click_level_one_menu_item(commodity)
+
+            # Verify that it closed
+            assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
 
     def test_dairy_layers_panel(self):
         self.leftpanel.dismiss_splash_page()
@@ -561,72 +561,72 @@ class TestAgInsight(BaseTest):
         # Verify all of the layer names are in the layer list
         assert self.leftpanel.verify_layers_exist_within_sector_list(layerNames), 'Not all layers are present in the Dairy sector layer list'
 
-    # def test_field_crops_layers_panel(self):
-    #     self.leftpanel.dismiss_splash_page()
-    #
-    #     sectors = {'Barley': ['Barley Production by Year', 'Land Potential for Barley', 'Get more data'],
-    #         'Beans': ['Beans Production by Year', 'Land Potential for Faba Beans', 'Get more data'],
-    #         'Canola': ['Canola Production by Year', 'Land Potential for Canola', 'Get more data'],
-    #         'Chick Peas': ['Chick Peas Production by Year', 'Land Potential for Chickpeas', 'Get more data'],
-    #         'Lentils': ['Land Potential for Lentils', 'Lentils Production by Year', 'Get more data'],
-    #         'Lupins': ['Land Potential for Lupins', 'Lupins Production by Year', 'Get more data'],
-    #         'Oats': ['Land Potential for Oats', 'Oats Production by Year', 'Get more data'],
-    #         'Peas': ['Land Potential for Field Peas', 'Peas Production by Year', 'Get more data'],
-    #         'Ryecorn': ['Land Potential for Dryland Perennial Rye Grass', 'Land Potential for Irrigated Rye Grass', 'Land Potential for Perennial Rye Grass (High-Value)', 'Rye Production by Year', 'Get more data'],
-    #         'Wheat': ['Wheat Regions', 'Durum Production by Year', 'Grain Storage', 'Land Potential for Wheat', 'Wheat Production by Year', 'Get more data']}
-    #
-    #     # Open the Field Crops commodity
-    #     self.leftpanel.click_level_one_menu_item('Field Crops')
-    #
-    #     # Iterate through the sectors
-    #     for sector in sectors.keys():
-    #         # Open the sector
-    #         self.leftpanel.click_level_two_menu_item(sector)
-    #
-    #         # Verify all the layer names are in the layer list
-    #         assert self.leftpanel.verify_layers_exist_within_sector_list(sectors[sector]), 'Not all layers are present in the ' + sector + ' sector layer list'
+    def test_field_crops_layers_panel(self):
+        self.leftpanel.dismiss_splash_page()
+
+        sectors = {'Barley': ['Barley Production by Year', 'Land Potential for Barley', 'Get more data'],
+            'Beans': ['Beans Production by Year', 'Land Potential for Faba Beans', 'Get more data'],
+            'Canola': ['Canola Production by Year', 'Land Potential for Canola', 'Get more data'],
+            'Chick Peas': ['Chick Peas Production by Year', 'Land Potential for Chickpeas', 'Get more data'],
+            'Lentils': ['Land Potential for Lentils', 'Lentils Production by Year', 'Get more data'],
+            'Lupins': ['Land Potential for Lupins', 'Lupins Production by Year', 'Get more data'],
+            'Oats': ['Land Potential for Oats', 'Oats Production by Year', 'Get more data'],
+            'Peas': ['Land Potential for Field Peas', 'Peas Production by Year', 'Get more data'],
+            'Ryecorn': ['Land Potential for Dryland Perennial Rye Grass', 'Land Potential for Irrigated Rye Grass', 'Land Potential for Perennial Rye Grass (High-Value)', 'Rye Production by Year', 'Get more data'],
+            'Wheat': ['Wheat Regions', 'Durum Production by Year', 'Grain Storage', 'Land Potential for Wheat', 'Wheat Production by Year', 'Get more data']}
+
+        # Open the Field Crops commodity
+        self.leftpanel.click_level_one_menu_item('Field Crops')
+
+        # Iterate through the sectors
+        for sector in sectors.keys():
+            # Open the sector
+            self.leftpanel.click_level_two_menu_item(sector)
+
+            # Verify all the layer names are in the layer list
+            assert self.leftpanel.verify_layers_exist_within_sector_list(sectors[sector]), 'Not all layers are present in the ' + sector + ' sector layer list'
 
     # def test_forestry_layers_panel(self):
     #     '''There is nothing to test here, as there are no sub-menus for Forestry.'''
     #     assert 1 == 1
 
-    # def test_horticulture_layers_panel(self):
-    #     self.leftpanel.dismiss_splash_page()
-    #
-    #     # TODO: this tese will fail until we can work out a way to scroll the screen.
-    #     # Some elements are not clickable otherwise!
-    #
-    #     sectors = {'Almonds': ['Almond Regions', 'Land Potential for Almonds', 'Get more data'],
-    #         'Apples': ['Land Potential for Apples', 'Get more data'],
-    #         'Carrots': ['Land Potential for Carrots', 'Get more data'],
-    #         'Cherries': ['Land Potential for Cherries', 'Get more data'],
-    #         'Citrus': ['Land Potential for Citrus', 'Get more data'],
-    #         'Olives for Oil': ['Land Potential for Olives', 'Get more data'],
-    #         'Onions': ['Land Potential for Onions', 'Get more data'],
-    #         'Pears': ['Land Potential for Pears', 'Get more data'],
-    #         'Potatoes': ['Land Potential for Potatoes', 'Get more data'],
-    #         'Sweet Corn': ['Land Potential for Maize', 'Get more data'],
-    #         'Table Olives': ['Land Potential for Olives', 'Get more data']}
-    #
-    #     # Open the Horticulture commodity
-    #     self.leftpanel.click_level_one_menu_item('Horticulture')
-    #
-    #     failedTests = []
-    #
-    #     # Iterate through the sectors
-    #     for sector in sectors.keys():
-    #         # Open the sector
-    #         try:
-    #             # We will manually maintain failed tests, because we can't scroll the screeen
-    #             # as such, we expect some tests to fail, but others to pass
-    #             self.leftpanel.click_level_two_menu_item(sector)
-    #             if self.leftpanel.verify_layers_exist_within_sector_list(sectors[sector]) == False:
-    #                 failedTests.append(sector)
-    #         except:
-    #             failedTests.append(sector)
-    #
-    #     # Verify all the tests passed, otherwise print out the failed sectors
-    #     assert len(failedTests) == 0, 'Not all secotrs passed layer testing. Failed sectors are: ' + ','.join(failedTests)
+    def test_horticulture_layers_panel(self):
+        self.leftpanel.dismiss_splash_page()
+
+        # TODO: this tese will fail until we can work out a way to scroll the screen.
+        # Some elements are not clickable otherwise!
+
+        sectors = {'Almonds': ['Almond Regions', 'Land Potential for Almonds', 'Get more data'],
+            'Apples': ['Land Potential for Apples', 'Get more data'],
+            'Carrots': ['Land Potential for Carrots', 'Get more data'],
+            'Cherries': ['Land Potential for Cherries', 'Get more data'],
+            'Citrus': ['Land Potential for Citrus', 'Get more data'],
+            'Olives for Oil': ['Land Potential for Olives', 'Get more data'],
+            'Onions': ['Land Potential for Onions', 'Get more data'],
+            'Pears': ['Land Potential for Pears', 'Get more data'],
+            'Potatoes': ['Land Potential for Potatoes', 'Get more data'],
+            'Sweet Corn': ['Land Potential for Maize', 'Get more data'],
+            'Table Olives': ['Land Potential for Olives', 'Get more data']}
+
+        # Open the Horticulture commodity
+        self.leftpanel.click_level_one_menu_item('Horticulture')
+
+        failedTests = []
+
+        # Iterate through the sectors
+        for sector in sectors.keys():
+            # Open the sector
+            try:
+                # We will manually maintain failed tests, because we can't scroll the screeen
+                # as such, we expect some tests to fail, but others to pass
+                self.leftpanel.click_level_two_menu_item(sector)
+                if self.leftpanel.verify_layers_exist_within_sector_list(sectors[sector]) == False:
+                    failedTests.append(sector)
+            except:
+                failedTests.append(sector)
+
+        # Verify all the tests passed, otherwise print out the failed sectors
+        assert len(failedTests) == 0, 'Not all secotrs passed layer testing. Failed sectors are: ' + ','.join(failedTests)
 
     # def test_livestock_layers_panel(self):
     #     self.leftpanel.dismiss_splash_page()
