@@ -529,23 +529,23 @@ class TestAgInsight(BaseTest):
             # Verify that it closed
             assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
 
-    # def test_all_commodity_panels_open_and_close_using_commodity_button(self):
-    #     self.leftpanel.dismiss_splash_page()
-    #
-    #     commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
-    #
-    #     for commodity in commodities:
-    #         # Open the commodity panel
-    #         self.leftpanel.click_level_one_menu_item(commodity)
-    #
-    #         # Verify the panel has opened
-    #         assert self.leftpanel.commodity_panel_is_open(commodity), commodity + ' commodity panel did not open'
-    #
-    #         # Now click the commodity panel again to close it
-    #         self.leftpanel.click_level_one_menu_item(commodity)
-    #
-    #         # Verify that it closed
-    #         assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
+    def test_all_commodity_panels_open_and_close_using_commodity_button(self):
+        self.leftpanel.dismiss_splash_page()
+
+        commodities = ['Dairy', 'Field Crops', 'Forestry', 'Horticulture', 'Livestock', 'Seafood', 'Wine']
+
+        for commodity in commodities:
+            # Open the commodity panel
+            self.leftpanel.click_level_one_menu_item(commodity)
+
+            # Verify the panel has opened
+            assert self.leftpanel.commodity_panel_is_open(commodity), commodity + ' commodity panel did not open'
+
+            # Now click the commodity panel again to close it
+            self.leftpanel.click_level_one_menu_item(commodity)
+
+            # Verify that it closed
+            assert self.leftpanel.verify_no_commodities_are_opened() == False, 'There is a commodity panel which is opened and shouldnt be'
 
     # def test_dairy_layers_panel(self):
     #     self.leftpanel.dismiss_splash_page()
