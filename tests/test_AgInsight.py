@@ -585,49 +585,49 @@ class TestAgInsight(BaseTest):
 
             # Verify all the layer names are in the layer list
             assert self.leftpanel.verify_layers_exist_within_sector_list(sectors[sector]), 'Not all layers are present in the ' + sector + ' sector layer list'
-    
+
     # def test_forestry_layers_panel(self):
     #     '''There is nothing to test here, as there are no sub-menus for Forestry.'''
     #     assert 1 == 1
-    #
-    # def test_horticulture_layers_panel(self):
-    #     self.leftpanel.dismiss_splash_page()
-    #
-    #     # TODO: this tese will fail until we can work out a way to scroll the screen.
-    #     # Some elements are not clickable otherwise!
-    #
-    #     sectors = {'Almonds': ['Almond Regions', 'Land Potential for Almonds', 'Get more data'],
-    #         'Apples': ['Land Potential for Apples', 'Get more data'],
-    #         'Carrots': ['Land Potential for Carrots', 'Get more data'],
-    #         'Cherries': ['Land Potential for Cherries', 'Get more data'],
-    #         'Citrus': ['Land Potential for Citrus', 'Get more data'],
-    #         'Olives for Oil': ['Land Potential for Olives', 'Get more data'],
-    #         'Onions': ['Land Potential for Onions', 'Get more data'],
-    #         'Pears': ['Land Potential for Pears', 'Get more data'],
-    #         'Potatoes': ['Land Potential for Potatoes', 'Get more data'],
-    #         'Sweet Corn': ['Land Potential for Maize', 'Get more data'],
-    #         'Table Olives': ['Land Potential for Olives', 'Get more data']}
-    #
-    #     # Open the Horticulture commodity
-    #     self.leftpanel.click_level_one_menu_item('Horticulture')
-    #
-    #     failedTests = []
-    #
-    #     # Iterate through the sectors
-    #     for sector in sectors.keys():
-    #         # Open the sector
-    #         try:
-    #             # We will manually maintain failed tests, because we can't scroll the screeen
-    #             # as such, we expect some tests to fail, but others to pass
-    #             self.leftpanel.click_level_two_menu_item(sector)
-    #             if self.leftpanel.verify_layers_exist_within_sector_list(sectors[sector]) == False:
-    #                 failedTests.append(sector)
-    #         except:
-    #             failedTests.append(sector)
-    #
-    #     # Verify all the tests passed, otherwise print out the failed sectors
-    #     assert len(failedTests) == 0, 'Not all secotrs passed layer testing. Failed sectors are: ' + ','.join(failedTests)
-    #
+    
+    def test_horticulture_layers_panel(self):
+        self.leftpanel.dismiss_splash_page()
+
+        # TODO: this tese will fail until we can work out a way to scroll the screen.
+        # Some elements are not clickable otherwise!
+
+        sectors = {'Almonds': ['Almond Regions', 'Land Potential for Almonds', 'Get more data'],
+            'Apples': ['Land Potential for Apples', 'Get more data'],
+            'Carrots': ['Land Potential for Carrots', 'Get more data'],
+            'Cherries': ['Land Potential for Cherries', 'Get more data'],
+            'Citrus': ['Land Potential for Citrus', 'Get more data'],
+            'Olives for Oil': ['Land Potential for Olives', 'Get more data'],
+            'Onions': ['Land Potential for Onions', 'Get more data'],
+            'Pears': ['Land Potential for Pears', 'Get more data'],
+            'Potatoes': ['Land Potential for Potatoes', 'Get more data'],
+            'Sweet Corn': ['Land Potential for Maize', 'Get more data'],
+            'Table Olives': ['Land Potential for Olives', 'Get more data']}
+
+        # Open the Horticulture commodity
+        self.leftpanel.click_level_one_menu_item('Horticulture')
+
+        failedTests = []
+
+        # Iterate through the sectors
+        for sector in sectors.keys():
+            # Open the sector
+            try:
+                # We will manually maintain failed tests, because we can't scroll the screeen
+                # as such, we expect some tests to fail, but others to pass
+                self.leftpanel.click_level_two_menu_item(sector)
+                if self.leftpanel.verify_layers_exist_within_sector_list(sectors[sector]) == False:
+                    failedTests.append(sector)
+            except:
+                failedTests.append(sector)
+
+        # Verify all the tests passed, otherwise print out the failed sectors
+        assert len(failedTests) == 0, 'Not all secotrs passed layer testing. Failed sectors are: ' + ','.join(failedTests)
+
     # def test_livestock_layers_panel(self):
     #     self.leftpanel.dismiss_splash_page()
     #
