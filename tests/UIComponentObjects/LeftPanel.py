@@ -132,6 +132,7 @@ class LeftPanel(object):
             if commodity.get_attribute('data-menu') == commodityToFind:
                 # Click the commodity open
                 commodity.click()
+                break
 
     def click_level_two_menu_item(self, sectorToFind):
         '''Clicks on the specified sector item within the opened commodity.'''
